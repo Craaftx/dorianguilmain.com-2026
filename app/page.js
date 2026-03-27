@@ -1,14 +1,13 @@
 import FullpageScroller from "./components/FullpageScroller";
+import Home from "./components/Home";
 
 const sections = [
-  <div className="flex items-center justify-center h-screen" key="hero">
-    <p className="text-gray-400">JavaScript Developer</p>
-  </div>,
+  <Home key="home" />,
   <div className="flex items-center justify-center h-screen" key="ehl">
     <p className="text-orange-400">Basic Slide</p>
   </div>,
 ];
 
-export default function Home() {
+export default function Page() {
   return <FullpageScroller sections={sections} />;
 }

@@ -33,7 +33,7 @@ export default function FullpageScroller({ sections }) {
 
       if (currentIndex >= 0) {
         gsap.set(sectionEls[currentIndex], { zIndex: 0 });
-        tl.set(sectionEls[currentIndex], { autoAlpha: 0 });
+        tl.to(sectionEls[currentIndex], { yPercent: -100 * dFactor }, 0);
       }
 
       gsap.set(sectionEls[index], { autoAlpha: 1, zIndex: 1 });
@@ -49,7 +49,7 @@ export default function FullpageScroller({ sections }) {
     }
 
     const observer = Observer.create({
-      type: "wheel,touch,pointer",
+      type: "wheel,touch",
       wheelSpeed: -1,
       onDown: () => !animating && gotoSection(currentIndex - 1, -1),
       onUp: () => !animating && gotoSection(currentIndex + 1, 1),

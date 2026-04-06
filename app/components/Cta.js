@@ -1,16 +1,18 @@
 import { Alien, Block, scribbleAsTextClasses } from "./Scribbles";
+import CollageCanvas from "./collage/CollageCanvas";
 
 const Cta = () => {
   return (
     <div className="relative flex flex-col justify-between h-screen overflow-hidden z-0 p-16">
-      <div className="flex flex-col gap-4 p-4 shadow-md w-full max-w-2xl bg-background">
-        <h2 className="text-7xl">
+      <CollageCanvas />
+      <div className="relative z-10 flex flex-col gap-4 p-4 shadow-md w-full max-w-xl bg-background">
+        <h2 className="text-6xl">
           <span className="text-orange-400">Thanks you</span> for this
           exploration
         </h2>
-        <p className="text-2xl">{`Feel free to contact me and discuss of my place in one your projects. And please don’t hesitate to customise the visuals of the site. I will love to see your creativity.`}</p>
+        <p className="text-xl">{`Feel free to contact me and discuss of my place in one your projects. And please don’t hesitate to customise the visuals of the site. I will love to see your creativity.`}</p>
       </div>
-      <div className="flex justify-between bg-background border-t-4 border-orange-400 px-4 py-3 mx-4">
+      <div className="relative z-10 flex justify-between bg-background border-t-4 border-orange-400 px-4 py-3 mx-4">
         <div className="flex flex-col">
           <p className="font-bold">Get In Touch</p>
           <p className="text-sm">hello@dorianguilmain.com</p>

@@ -3,14 +3,27 @@ import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Cta from "./components/Cta";
 import About from "./components/About";
+import Navigation from "./components/Navigation";
+import { SectionProvider } from "./components/SectionContext";
+import { SECTIONS } from "./components/sections";
 
-const sections = [
-  <Home key="home" />,
-  <About key="about" />,
-  <Projects key="projects" />,
-  <Cta key="cta" />,
-];
+const sectionContent = {
+  home: <Home />,
+  about: <About />,
+  projects: <Projects />,
+  cta: <Cta />,
+};
 
 export default function Page() {
-  return <FullpageScroller sections={sections} />;
+  return (
+    <SectionProvider>
+      <Navigation />
+      <FullpageScroller
+        sections={SECTIONS.map((s) => ({
+          id: s.id,
+          content: sectionContent[s.id],
+        }))}
+      />
+    </SectionProvider>
+  );
 }

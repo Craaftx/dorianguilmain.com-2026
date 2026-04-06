@@ -109,6 +109,22 @@ export const Block = ({ text, className, ...props }) => {
   );
 };
 
+export const Circled = ({ text, className, active = false, ...props }) => {
+  return (
+    <div className="relative inline-block" {...props}>
+      {text}
+      <Image
+        src="/scribbles/circled.png"
+        alt="Circled"
+        width={200}
+        height={47}
+        className={`absolute h-full w-full  scale-y-180 scale-x-130 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pointer-events-none ${active ? "opacity-100" : "opacity-0"}`}
+        {...props}
+      />
+    </div>
+  );
+};
+
 export const Underlined = ({ text, className, ...props }) => {
   return (
     <div className="relative inline-block" {...props}>

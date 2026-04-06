@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const WorkItem = ({ title, description, period }) => (
   <div
-    className={`flex gap-8 items-center justify-between border-b border-white/20 pb-2`}
+    className={`flex gap-8 items-center justify-between border-b border-text/20 pb-2`}
   >
     <div className="flex flex-col gap-0.5">
-      <span className="text-sm text-white">{title}</span>
+      <span className="text-sm">{title}</span>
       <span className="text-xs font-mono whitespace-nowrap opacity-70">
         {description}
       </span>
@@ -42,21 +42,23 @@ const Works = () => (
 );
 
 const Content = () => (
-  <div className="flex flex-1 justify-between items-center gap-16 px-16 py-8 text-background">
+  <div className="flex flex-1 justify-between items-center gap-16 px-16 py-8 text-background bg-foreground">
     <div className="flex gap-8">
       <div className="flex flex-col gap-2">
-        <span className="text-xs font-mono">
+        <span className="text-xs font-mono opacity-80">
           Product oriented / Business first
         </span>
-        <p className="text-2xl text-white">7+ years of works</p>
-        <p className="font-mono text-sm text-muted">
+        <p className="text-2xl">7+ years of works</p>
+        <p className="font-mono text-sm opacity-80">
           {`Over 7 years building creative React interfaces in startups and large corporations. Solid foundation. I deliver code designed to last and be passed on.`}
         </p>
       </div>
       <div className="flex flex-col gap-2">
-        <span className="text-xs  font-mono">Pedagogical / Web advocate</span>
-        <p className="text-2xl text-white">Turn the complex accessible.</p>
-        <p className="font-mono text-sm text-muted">
+        <span className="text-xs font-mono opacity-80">
+          Pedagogical / Web advocate
+        </span>
+        <p className="text-2xl">Turn the complex accessible.</p>
+        <p className="font-mono text-sm opacity-80">
           {`Three years of mentoring and two years of creating content have taught me how to make complex things accessible, whether to a developer or a decision-maker.`}
         </p>
       </div>

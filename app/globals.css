@@ -22,6 +22,52 @@
   --color-orange-950: oklch(0.2507 0.073 28.36);
 }
 
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.4;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0.6;
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  54% {
+    opacity: 0.8;
+  }
+  56% {
+    opacity: 1;
+  }
+}
+
+.tv-screen {
+  animation: flicker 4s infinite;
+  box-shadow: 0 0 20px 8px rgba(150, 200, 255, 0.4),
+    0 0 60px 20px rgba(150, 200, 255, 0.15);
+}
+
+.tv-screen-2 {
+  animation: flicker 5s infinite 1.2s;
+  box-shadow: 0 0 20px 8px rgba(150, 200, 255, 0.4),
+    0 0 60px 20px rgba(150, 200, 255, 0.15);
+}
+
+.tv-screen-3 {
+  animation: flicker 3.5s infinite 0.7s;
+  box-shadow: 0 0 20px 8px rgba(150, 200, 255, 0.4),
+    0 0 60px 20px rgba(150, 200, 255, 0.15);
+}
+
 html,
 body {
   margin: 0;

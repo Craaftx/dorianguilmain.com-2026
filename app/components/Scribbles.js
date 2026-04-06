@@ -54,6 +54,45 @@ export const SmileDead = ({ className, ...props }) => {
   );
 };
 
+export const Pyramid = ({ className, ...props }) => {
+  return (
+    <Image
+      src="/scribbles/symbols/pyramid.png"
+      alt="Pyramid"
+      width={100}
+      height={80}
+      className={className}
+      {...props}
+    />
+  );
+};
+
+export const Diamond = ({ className, ...props }) => {
+  return (
+    <Image
+      src="/scribbles/symbols/diamond.png"
+      alt="Diamond"
+      width={100}
+      height={74}
+      className={className}
+      {...props}
+    />
+  );
+};
+
+export const Infinite = ({ className, ...props }) => {
+  return (
+    <Image
+      src="/scribbles/symbols/infinite.png"
+      alt="Infinite"
+      width={100}
+      height={45}
+      className={className}
+      {...props}
+    />
+  );
+};
+
 export const Block = ({ text, className, ...props }) => {
   return (
     <div className="relative inline-block" {...props}>

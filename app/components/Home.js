@@ -10,10 +10,10 @@ import {
   Underlined,
 } from "./Scribbles";
 
-const BigBlock = ({ text, ...props }) => {
+const BigBlock = ({ text, className = "", ...props }) => {
   return (
     <span
-      className={`relative inline-block text-7xl text-orange-300 w-auto`}
+      className={`relative inline-block lg:text-7xl md:text-4xl text-2xl text-orange-300 w-auto ${className}`}
       {...props}
     >
       {text}
@@ -39,18 +39,21 @@ const BigBlock = ({ text, ...props }) => {
 
 const Home = () => {
   return (
-    <div className="relative flex items-center justify-center h-screen p-16 bg-foreground z-0 overflow-hidden">
+    <div className="relative flex items-center justify-center h-screen lg:p-16 md:p-8 p-4 bg-foreground z-0 overflow-hidden">
       <MovingBackground />
-      <div className="flex w-full h-full bg-background shadow-lg z-10">
-        <div className="flex-2 flex flex-col justify-between p-8">
+      <div className="flex max-md:flex-col w-full h-full bg-background shadow-lg z-10">
+        <div className="flex flex-col flex-2 max-md:order-2 justify-between gap-2 p-8">
           <div className="flex justify-between py-2 border-b-2 border-foreground ">
             <p>Dorian G</p>
             <p>Developer/Creator</p>
           </div>
 
-          <BigBlock text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+          <BigBlock
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            className="max-md:hidden"
+          />
 
-          <h1 className="text-4xl mb-8">
+          <h1 className="lg:text-4xl md:text-2xl text-xl md:mb-8 max-md:mt-4">
             I am a{" "}
             <span className="text-orange-400">
               freelance{" "}
@@ -68,7 +71,7 @@ const Home = () => {
             <Underlined text="have become rare." />
           </h1>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 max-md:order-1 max-md:max-h-[50vh] ">
           <Image
             src="/me/main.jpg"
             alt="Profile"

@@ -72,7 +72,7 @@ const CollageCanvas = ({ mode, setMode }) => {
 
   return (
     <div
-      className={`absolute inset-0 overflow-hidden ${isEditing ? "" : "pointer-events-none"}`}
+      className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-screen w-screen overflow-hidden ${isEditing ? "" : "pointer-events-none"}`}
       style={{ zIndex: 0 }}
       onWheel={isEditing ? (e) => e.stopPropagation() : undefined}
     >

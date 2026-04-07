@@ -187,7 +187,7 @@ const Projects = () => {
           alt="Cloud"
           width={468}
           height={298}
-          className="collage absolute -right-48 -top-24 -rotate-180"
+          className="collage absolute -right-48 max-md:-right-[70%] -top-24 max-md:-top-32 -rotate-180"
         />
         <Image
           ref={(el) => (cloudRefs.current[2] = el)}
@@ -195,7 +195,7 @@ const Projects = () => {
           alt="Pink Cloud"
           width={316}
           height={171}
-          className="collage absolute right-2 -top-12 rotate-12"
+          className="collage absolute right-2 -top-12 max-md:-top-24 rotate-12"
         />
         <Image
           ref={(el) => (cloudRefs.current[3] = el)}
@@ -203,7 +203,7 @@ const Projects = () => {
           alt="Cloud"
           width={400}
           height={255}
-          className="collage absolute -right-48 -bottom-24"
+          className="collage absolute -right-48 max-md:-right-[80%] -bottom-24"
         />
         <Image
           ref={(el) => (cloudRefs.current[5] = el)}
@@ -211,7 +211,7 @@ const Projects = () => {
           alt="Pink Cloud"
           width={316}
           height={171}
-          className="collage absolute -left-28 -bottom-20 -rotate-12"
+          className="collage absolute -left-28 max-md:-left-[50%] -bottom-20 -rotate-12"
         />
         <Image
           ref={(el) => (cloudRefs.current[4] = el)}
@@ -219,20 +219,23 @@ const Projects = () => {
           alt="Pink Cloud"
           width={316}
           height={171}
-          className="collage absolute right-[5%] -bottom-24 rotate-180"
+          className="collage absolute right-[5%] max-md:-right-[10%] -bottom-24 rotate-180"
         />
       </div>
 
-      <div className="flex flex-col gap-4 p-16">
-        <h2 className="text-5xl text-white">
+      <div className="flex flex-col gap-4 max-md:gap-1 p-16 max-md:p-8">
+        <h2 className="text-5xl max-md:text-2xl max-md:font-bold text-white">
           Explore some of my <span className="text-orange-400">projects</span>
         </h2>
-        <p className="text-2xl text-background opacity-80">
+        <p className="text-2xl max-md:text-sm text-background opacity-80">
           Mostly MVP or Work In Progress
         </p>
       </div>
 
-      <div ref={viewportRef} className="relative py-8">
+      <div
+        ref={viewportRef}
+        className="relative py-8 max-md:py-12 max-md:scale-180"
+      >
         <div
           ref={trackRef}
           className="flex flex-row h-full items-center"
@@ -262,16 +265,38 @@ const Projects = () => {
         </div>
       </div>
 
-      <div ref={detailsRef} className="flex flex-1 gap-8 mt-8 px-16 pb-16">
-        <div className="flex flex-col gap-2 flex-1">
-          <p className="text-2xl text-white">What is about</p>
-          <p className="text-md text-background opacity-80">{project.about}</p>
+      <div
+        ref={detailsRef}
+        className="flex flex-1 max-md:flex-col gap-8 max-md:gap-1 mt-8 max-md:mt-4 px-16 max-md:px-8"
+      >
+        <div className="flex flex-col gap-2 max-md:gap-1 flex-1">
+          <p className="text-2xl max-md:text-base max-md:font-bold text-white">
+            What is about
+          </p>
+          <p className="text-md max-md:text-sm text-background opacity-80">
+            {project.about}
+          </p>
         </div>
-        <div className="flex flex-col gap-2 flex-1">
-          <p className="text-2xl text-white">And what else?</p>
-          <p className="text-md text-background opacity-80">{project.extra}</p>
+        <div className="flex flex-col gap-2 max-md:gap-1 flex-1">
+          <p className="text-2xl max-md:text-base max-md:font-bold text-white">
+            And what else?
+          </p>
+          <p className="text-md max-md:text-sm text-background opacity-80">
+            {project.extra}
+          </p>
         </div>
-        <div className="flex-1" />
+        <div className="flex-1">
+          {project?.action && (
+            <a
+              href={project.action.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-md max-md:text-sm text-background opacity-80 underline"
+            >
+              {project.action.label}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

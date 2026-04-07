@@ -18,9 +18,8 @@ function loadCollage() {
   return [...DEFAULT_COLLAGE];
 }
 
-const CollageCanvas = () => {
+const CollageCanvas = ({ mode, setMode }) => {
   const [elements, setElements] = useState(loadCollage);
-  const [mode, setMode] = useState("viewing");
   const saveTimerRef = useRef(null);
 
   // Debounced save to localStorage
@@ -30,6 +29,7 @@ const CollageCanvas = () => {
     saveTimerRef.current = setTimeout(() => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(elements));
     }, 300);
+
     return () => clearTimeout(saveTimerRef.current);
   }, [elements]);
 
@@ -89,21 +89,13 @@ const CollageCanvas = () => {
         ))}
       </div>
 
-      {/* Edit toggle button — always interactive */}
-      <button
-        onClick={() => setMode(isEditing ? "viewing" : "editing")}
-        className="absolute top-4 right-4 z-50 pointer-events-auto w-10 h-10 bg-foreground text-background rounded-full flex items-center justify-center hover:bg-orange-400 cursor-pointer transition-colors shadow-lg text-sm"
-        title={isEditing ? "Done editing" : "Edit collage"}
-      >
-        {isEditing ? "ok" : "ed"}
-      </button>
-
       {/* Bottom menu in editing mode */}
       {isEditing && (
         <CollageMenu
           onAddElement={addElement}
           onSetDefault={handleSetDefault}
           onResetAll={handleResetAll}
+          onDone={() => setMode("viewing")}
         />
       )}
     </div>

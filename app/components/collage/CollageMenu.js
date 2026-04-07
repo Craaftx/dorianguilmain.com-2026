@@ -2,15 +2,15 @@
 
 import { ASSET_CATALOG } from "./collageDefaults";
 
-const CollageMenu = ({ onAddElement, onSetDefault, onResetAll }) => {
+const CollageMenu = ({ onAddElement, onSetDefault, onResetAll, onDone }) => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-50 bg-foreground/90 backdrop-blur-sm border-t-2 border-orange-400 p-3 flex items-center gap-4">
-      <div className="flex gap-2 overflow-x-auto flex-1 py-1">
+    <div className="absolute flex bottom-0 left-0 right-0 z-110 bg-background border-t-4 border-orange-400">
+      <div className="flex gap-2 overflow-x-auto flex-1 p-2 bg-foreground">
         {ASSET_CATALOG.map((asset) => (
           <button
             key={asset.src}
             onClick={() => onAddElement(asset)}
-            className="shrink-0 w-14 h-14 bg-background/20 rounded border border-orange-400/30 hover:border-orange-400 p-1 cursor-pointer transition-colors"
+            className="shrink-0 w-20 h-20 mt-1 bg-orange-100/10 rounded border border-orange-400/30 hover:border-orange-400 p-1 cursor-pointer transition-colors"
             title={asset.label}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -23,18 +23,26 @@ const CollageMenu = ({ onAddElement, onSetDefault, onResetAll }) => {
           </button>
         ))}
       </div>
-      <div className="flex gap-2 shrink-0">
+      <div className="flex flex-col h-full gap-2 bg-background pt-4 px-4">
+        <div className="flex gap-2">
+          <button
+            onClick={onResetAll}
+            className="px-3 py-1.5 bg-red-400 text-white text-sm rounded hover:bg-red-500 cursor-pointer transition-colors"
+          >
+            Clear All
+          </button>
+          <button
+            onClick={onSetDefault}
+            className="px-3 py-1.5 border-2 border-red-400 text-red-400 text-sm rounded hover:bg-red-400 hover:text-white cursor-pointer transition-colors"
+          >
+            Reset Default
+          </button>
+        </div>
         <button
-          onClick={onSetDefault}
-          className="px-3 py-1.5 bg-orange-400 text-foreground text-sm rounded hover:bg-orange-500 cursor-pointer transition-colors"
+          onClick={onDone}
+          className="px-3 py-1.5 border-2 border-foreground text-foreground text-sm rounded hover:bg-foreground hover:text-background cursor-pointer transition-colors"
         >
-          Set Default
-        </button>
-        <button
-          onClick={onResetAll}
-          className="px-3 py-1.5 bg-red-500 text-white text-sm rounded hover:bg-red-600 cursor-pointer transition-colors"
-        >
-          Reset All
+          Done editing
         </button>
       </div>
     </div>

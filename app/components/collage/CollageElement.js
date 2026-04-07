@@ -5,7 +5,7 @@ import { useRef } from "react";
 const DeleteButton = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute -top-8 -right-2 w-6 h-6 bg-red-400 text-white rounded-full text-xs flex items-center justify-center hover:bg-red-600 cursor-pointer"
+    className="absolute -right-7 top-1/2 -translate-y-1/2 w-6 h-6 bg-red-400 text-white rounded-full text-xs flex items-center justify-center hover:bg-red-600 cursor-pointer"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ const BringBackButton = ({ onClick }) => (
 const RotateHandle = ({ onPointerDown }) => (
   <div
     onPointerDown={onPointerDown}
-    className="absolute flex items-center justify-center -left-7 top-1/2 -translate-y-1/2 w-6 h-6 text-background bg-orange-400 rounded-full cursor-grab active:cursor-grabbing"
+    className="absolute flex items-center justify-center -top-7 left-1/2 -translate-x-1/2 w-6 h-6 text-background bg-orange-400 rounded-full cursor-grab active:cursor-grabbing"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -213,7 +213,7 @@ const CollageElement = ({ element, isEditing, onUpdate, onDelete }) => {
             }}
           />
 
-          <div className="absolute -top-8 -left-2 flex gap-0.5">
+          <div className="absolute -left-7 top-1/2 -translate-y-1/2 flex flex-col gap-0.5">
             <BringFrontButton
               onClick={(e) => {
                 e.stopPropagation();

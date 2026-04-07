@@ -39,7 +39,7 @@ const BigBlock = ({ text, ...props }) => {
 
 const Home = () => {
   return (
-    <div className="relative flex items-center justify-center h-screen p-16 bg-foreground z-0">
+    <div className="relative flex items-center justify-center h-screen p-16 bg-foreground z-0 overflow-hidden">
       <MovingBackground />
       <div className="flex w-full h-full bg-background shadow-lg z-10">
         <div className="flex-2 flex flex-col justify-between p-8">

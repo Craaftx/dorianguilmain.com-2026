@@ -69,7 +69,7 @@ const Content = () => (
 
 const About = () => {
   return (
-    <div className="relative flex flex-col justify-between h-screen bg-foreground z-30">
+    <div className="relative flex flex-col justify-between h-screen bg-foreground z-30 overflow-hidden">
       <div className="relative min-h-[65vh] w-full overflow-hidden">
         <Image
           src="/collages/big-sunset-01.png"

@@ -4,12 +4,12 @@ import localFont from "next/font/local";
 const myFont = localFont({
   src: [
     {
-      path: "/fonts/AdvercaseDemo-Regular.woff",
+      path: "./fonts/AdvercaseDemo-Regular.woff",
       weight: "400",
       style: "normal",
     },
     {
-      path: "/fonts/AdvercaseDemo-Bold.woff",
+      path: "./fonts/AdvercaseDemo-Bold.woff",
       weight: "700",
       style: "normal",
     },

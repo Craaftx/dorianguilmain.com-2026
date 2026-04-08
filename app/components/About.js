@@ -53,7 +53,7 @@ const Content = () => (
         <span className="text-xs font-mono opacity-80">
           Product oriented / Business first
         </span>
-        <p className="lg:text-2xl md:text-xl text-base max-sm:font-bold">
+        <p className="lg:text-2xl md:text-xl text-white max-sm:font-bold">
           7+ years of works
         </p>
         <p className="font-mono md:text-sm text-xs opacity-80">
@@ -64,7 +64,7 @@ const Content = () => (
         <span className="text-xs font-mono opacity-80">
           Pedagogical / Web advocate
         </span>
-        <p className="lg:text-2xl md:text-xl text-base max-sm:font-bold">
+        <p className="lg:text-2xl md:text-xl text-white max-sm:font-bold">
           Turn the complex accessible.
         </p>
         <p className="font-mono md:text-sm text-xs opacity-80">

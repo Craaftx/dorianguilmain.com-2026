@@ -1,6 +1,6 @@
 import FullpageScroller from "./components/FullpageScroller";
 import Home from "./components/Home";
-import Projects from "./components/Projects";
+import Projects from "./components/projects/Projects";
 import Cta from "./components/Cta";
 import About from "./components/About";
 import Navigation from "./components/Navigation";

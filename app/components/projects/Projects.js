@@ -3,45 +3,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-
-const projects = [
-  {
-    id: "css",
-    src: "/floppies/css.png",
-    label: "CSS",
-    about:
-      "A deep dive into advanced CSS techniques, animations, and modern layout systems.",
-    extra:
-      "Built with pure CSS — no JavaScript frameworks. Showcases grid, custom properties, and keyframe animations.",
-  },
-  {
-    id: "furnitures",
-    src: "/floppies/furnitures.png",
-    label: "Furnitures",
-    about:
-      "An e-commerce concept for a furniture brand, focused on clean UI and smooth browsing experience.",
-    extra:
-      "MVP built with Next.js and a headless CMS. Optimized for mobile and desktop viewports.",
-  },
-  {
-    id: "newsletter",
-    src: "/floppies/newsletter.png",
-    label: "Newsletter",
-    about:
-      "A newsletter platform for indie creators to publish and distribute their writing.",
-    extra:
-      "Includes subscription management, rich text editing, and email delivery integration.",
-  },
-  {
-    id: "portfolio",
-    src: "/floppies/porfolio.png",
-    label: "Portfolio",
-    about:
-      "This very site — a personal portfolio for Dorian Guilmain, freelance JS developer.",
-    extra:
-      "Built with Next.js 16, GSAP animations, and Tailwind CSS v4. Designed from scratch.",
-  },
-];
+import projectsContent from "./projectsContent";
+import ProjectLink from "./ProjectLink";
 
 const CLOUD_PARAMETERS = [
   { x: 18, delay: 0 },
@@ -57,8 +20,8 @@ const ITEM_SCALE_ACTIVE = 1.1;
 const ITEM_OPACITY_INACTIVE = 0.7;
 const ITEM_GAP_PX = 48;
 
-const extended = [...projects, ...projects, ...projects]; // Triple the array for infinite scroll and teleportation trick
-const N = projects.length; // Start on the middle of the extended array
+const extended = [...projectsContent, ...projectsContent, ...projectsContent]; // Triple the array for infinite scroll and teleportation trick
+const N = projectsContent.length; // Start on the middle of the extended array
 
 const getX = (vIdx, vpWidth) => {
   const w = vpWidth * (ITEM_WIDTH_VW / 100) + ITEM_GAP_PX;
@@ -168,7 +131,7 @@ const Projects = () => {
     return () => ro.disconnect();
   }, []);
 
-  const project = projects[selectedReal];
+  const project = projectsContent[selectedReal];
 
   return (
     <div className="relative flex flex-col h-screen bg-foreground overflow-hidden z-0">
@@ -267,35 +230,26 @@ const Projects = () => {
 
       <div
         ref={detailsRef}
-        className="flex flex-1 max-md:flex-col gap-8 max-md:gap-1 mt-8 max-md:mt-4 px-16 max-md:px-8"
+        className="flex max-md:flex-1 max-md:flex-col gap-8 max-md:gap-1 mt-8 max-md:mt-4 px-16 max-md:px-8"
       >
-        <div className="flex flex-col gap-2 max-md:gap-1 flex-1">
+        <div className="flex flex-col gap-2 max-md:gap-1 flex-2 max-md:flex-1 ">
           <p className="text-2xl max-md:text-base max-md:font-bold text-white">
-            What is about
+            {project.about.title}
           </p>
-          <p className="text-md max-md:text-sm text-background opacity-80">
-            {project.about}
+          <p className="font-mono text-md max-md:text-sm text-background opacity-80">
+            {project.about.content}
           </p>
         </div>
-        <div className="flex flex-col gap-2 max-md:gap-1 flex-1">
+        <div className="flex flex-col gap-2 max-md:gap-1 flex-2 max-md:flex-1 ">
           <p className="text-2xl max-md:text-base max-md:font-bold text-white">
-            And what else?
+            {project.extra.title}
           </p>
-          <p className="text-md max-md:text-sm text-background opacity-80">
-            {project.extra}
+          <p className="font-mono text-md max-md:text-sm text-background opacity-80">
+            {project.extra.content}
           </p>
         </div>
-        <div className="flex-1">
-          {project?.action && (
-            <a
-              href={project.action.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-md max-md:text-sm text-background opacity-80 underline"
-            >
-              {project.action.label}
-            </a>
-          )}
+        <div className="flex items-center justify-center flex-1">
+          {project?.action && <ProjectLink action={project.action} />}
         </div>
       </div>
     </div>

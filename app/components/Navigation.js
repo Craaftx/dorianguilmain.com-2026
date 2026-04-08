@@ -72,7 +72,7 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div onMouseLeave={() => setMenuOpen(false)}>
+    <div className="max-sm:hidden" onMouseLeave={() => setMenuOpen(false)}>
       <Indicators
         currentId={currentId}
         onMouseEnter={() => setMenuOpen(true)}

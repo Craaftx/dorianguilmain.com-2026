@@ -1,8 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Alien, Block, scribbleAsTextClasses, Underlined } from "./Scribbles";
+import {
+  Alien,
+  Block,
+  Dice,
+  scribbleAsTextClasses,
+  Underlined,
+} from "./Scribbles";
 import CollageCanvas from "./collage/CollageCanvas";
+import Image from "next/image";
 
 const Cta = () => {
   const [collageMode, setCollageMode] = useState("viewing");
@@ -18,7 +25,7 @@ const Cta = () => {
           <span className="text-orange-400">Thanks you</span> for this
           exploration
         </h2>
-        <p className="lg:text-xl md:text-md text-sm">
+        <div className="lg:text-xl md:text-md text-sm">
           <span>
             {`Feel free to contact me and discuss of my place in one your projects. `}
           </span>
@@ -34,10 +41,19 @@ const Cta = () => {
               : " customise the visuals of this page. "}
           </span>
           <span className="max-md:hidden">{`I will love to see your creativity.`}</span>
-        </p>
+        </div>
+      </div>
+      <div className="flex w-full justify-end max-md:hidden">
+        <button
+          className={`relative z-10 text-xs p-1 cursor-pointer text-left border-4 border-background hover:border-orange-400 bg-background transition-opacity ${isEditing ? "hidden" : ""}`}
+          onClick={() => setCollageMode(isEditing ? "viewing" : "editing")}
+        >
+          Click here to edit this <br /> collage <Underlined text="yourself" />{" "}
+          <Dice className={`h-4 w-auto ${scribbleAsTextClasses}`} />
+        </button>
       </div>
       <div
-        className={`relative z-10 flex max-md:flex-col max-md:gap-2 justify-between bg-background border-t-4 border-orange-400 px-6 py-3 transition-opacity ${isEditing ? "opacity-0 pointer-events-none" : ""}`}
+        className={`relative z-10 flex max-md:flex-col max-md:gap-2 justify-between px-6 py-3 md:mx-6 bg-background  border-t-4 border-orange-400 transition-opacity ${isEditing ? "opacity-0 pointer-events-none" : ""}`}
       >
         <div className="flex flex-1 flex-col">
           <p className="lg:text-md text-sm font-bold">Get In Touch</p>

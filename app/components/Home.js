@@ -42,7 +42,7 @@ const Home = () => {
     <div className="relative flex items-center justify-center h-screen lg:p-16 md:p-8 p-4 bg-foreground z-0 overflow-hidden">
       <MovingBackground />
       <div className="flex max-md:flex-col w-full h-full bg-background shadow-lg z-10">
-        <div className="flex flex-col flex-2 max-md:order-2 justify-between gap-2 p-8">
+        <div className="flex flex-col flex-2 max-md:flex-1 max-md:order-2 justify-between gap-2 p-8">
           <div className="flex justify-between py-2 border-b-2 border-foreground ">
             <p>Dorian G</p>
             <p>Developer/Creator</p>
@@ -71,7 +71,7 @@ const Home = () => {
             <Underlined text="have become rare." />
           </h1>
         </div>
-        <div className="flex-1 max-md:order-1 max-md:max-h-[50vh] ">
+        <div className="flex-1 max-md:order-1 max-md:max-h-[50vh] overflow-hidden">
           <Image
             src="/me/main.jpg"
             alt="Profile"

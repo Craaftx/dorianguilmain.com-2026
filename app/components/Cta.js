@@ -65,8 +65,22 @@ const Cta = () => {
         </div>
         <div className="flex flex-1 flex-col">
           <p className="lg:text-md text-sm font-bold">Connect</p>
-          <p className="lg:text-sm text-xs">LinkedIn</p>
-          <p className="lg:text-sm text-xs">Github</p>
+          <a
+            className="lg:text-sm text-xs hover:text-orange-400"
+            href="https://www.linkedin.com/in/dorian-guilmain/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            className="lg:text-sm text-xs hover:text-orange-400"
+            href="https://github.com/Craaftx"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
         </div>
         <div className="flex flex-2 flex-col">
           <p className=" lg:text-md text-sm font-bold">Freelancing TLDR:</p>

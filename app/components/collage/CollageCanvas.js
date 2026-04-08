@@ -1,47 +1,67 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useSyncExternalStore, useEffect, useRef, useCallback } from "react";
 import CollageElement from "./CollageElement";
 import CollageMenu from "./CollageMenu";
 import { DEFAULT_COLLAGE } from "./collageDefaults";
 
 const STORAGE_KEY = "collage-elements";
 
-function loadCollage() {
+const defaultSnapshot = [...DEFAULT_COLLAGE];
+let cachedRaw = null;
+let cachedParsed = defaultSnapshot;
+
+function getSnapshot() {
   try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      if (Array.isArray(parsed)) return parsed;
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw !== cachedRaw) {
+      cachedRaw = raw;
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        cachedParsed = Array.isArray(parsed) ? parsed : defaultSnapshot;
+      } else {
+        cachedParsed = defaultSnapshot;
+      }
     }
   } catch {}
-  return [...DEFAULT_COLLAGE];
+  return cachedParsed;
+}
+
+function getServerSnapshot() {
+  return defaultSnapshot;
+}
+
+function subscribe(callback) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
 }
 
 const CollageCanvas = ({ mode, setMode }) => {
-  const [elements, setElements] = useState(loadCollage);
+  const storedElements = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const [localElements, setLocalElements] = useState(null);
+  const elements = localElements ?? storedElements;
   const saveTimerRef = useRef(null);
 
   // Debounced save to localStorage
   useEffect(() => {
-    if (elements === null) return;
+    if (localElements === null) return;
     clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(elements));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(localElements));
     }, 300);
 
     return () => clearTimeout(saveTimerRef.current);
-  }, [elements]);
+  }, [localElements]);
 
   const updateElement = useCallback((id, partial) => {
-    setElements((prev) =>
-      prev.map((el) => (el.id === id ? { ...el, ...partial } : el)),
+    setLocalElements((prev) =>
+      (prev ?? storedElements).map((el) => (el.id === id ? { ...el, ...partial } : el)),
     );
-  }, []);
+  }, [storedElements]);
 
   const deleteElement = useCallback((id) => {
-    setElements((prev) => prev.filter((el) => el.id !== id));
-  }, []);
+    setLocalElements((prev) => (prev ?? storedElements).filter((el) => el.id !== id));
+  }, [storedElements]);
 
   const addElement = useCallback((asset) => {
     const newEl = {
@@ -54,21 +74,18 @@ const CollageCanvas = ({ mode, setMode }) => {
       rotation: 0,
       zIndex: 10,
     };
-    setElements((prev) => [...prev, newEl]);
-  }, []);
+    setLocalElements((prev) => [...(prev ?? storedElements), newEl]);
+  }, [storedElements]);
 
   const handleSetDefault = useCallback(() => {
-    setElements([...DEFAULT_COLLAGE]);
+    setLocalElements([...DEFAULT_COLLAGE]);
   }, []);
 
   const handleResetAll = useCallback(() => {
-    setElements([]);
+    setLocalElements([]);
   }, []);
 
   const isEditing = mode === "editing";
-
-  // Don't render until loaded from localStorage
-  if (elements === null) return null;
 
   return (
     <div

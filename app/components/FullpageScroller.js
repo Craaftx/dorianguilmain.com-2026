@@ -28,7 +28,7 @@ export default function FullpageScroller({ sections }) {
       const dFactor = fromTop ? -1 : 1;
 
       const tl = gsap.timeline({
-        defaults: { duration: 0.75, ease: "power1.inOut" },
+        defaults: { duration: 1.1, ease: "power1.inOut" },
         onComplete: () => {
           setSection(sections[index].id);
           setTimeout(() => {

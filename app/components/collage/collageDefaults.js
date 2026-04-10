@@ -1,7 +1,7 @@
 /* prettier-ignore */
 export const ASSET_CATALOG = [
   // Collages
-  { src: "/collages/moons.png", label: "Moons", defaultWidth: 1475, defaultHeight: 833 },
+  { src: "/collages/moons.png", label: "Moons", defaultWidth: 1292, defaultHeight: 265 },
   { src: "/collages/sunset.png", label: "Sunset", defaultWidth: 204, defaultHeight: 596 },
   { src: "/collages/pink-clouds.png", label: "Pink Clouds", defaultWidth: 971, defaultHeight: 478 },
   { src: "/collages/pink-cloud.png", label: "Pink Cloud", defaultWidth: 316, defaultHeight: 171 },

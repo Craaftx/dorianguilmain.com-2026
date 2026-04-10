@@ -36,7 +36,7 @@ const Menu = ({ currentId }) => {
         src={bigSunset01Img}
         alt="Big Sunset"
         placeholder="blur"
-        sizes="300px"
+        sizes="200px"
         quality={50}
         className="absolute  scale-200 rotate-5 -top-2 left-[50%] -translate-x-1/2 opacity-40 z-0"
       />
@@ -44,7 +44,7 @@ const Menu = ({ currentId }) => {
         src={mountainsImg}
         alt="Mountains"
         placeholder="blur"
-        sizes="300px"
+        sizes="200px"
         quality={50}
         className="absolute -bottom-2 left-0 w-full opacity-40 z-0"
       />

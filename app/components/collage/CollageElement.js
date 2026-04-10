@@ -201,6 +201,7 @@ const CollageElement = ({ element, isEditing, onUpdate, onDelete }) => {
         alt=""
         draggable={false}
         onPointerDown={handleMoveDown}
+        loading="lazy"
         className={`w-full h-full object-contain select-none ${isEditing ? "cursor-grab active:cursor-grabbing" : ""}`}
       />
 

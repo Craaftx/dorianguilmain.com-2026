@@ -1,7 +1,12 @@
+import cssImg from "../../../public/floppies/css.png";
+import furnituresImg from "../../../public/floppies/furnitures.png";
+import newsletterImg from "../../../public/floppies/newsletter.png";
+import portfolioImg from "../../../public/floppies/porfolio.png";
+
 const projectsContent = [
   {
     id: "css",
-    src: "/floppies/css.png",
+    src: cssImg,
     label: "CSS",
     about: {
       title: "My last blog",
@@ -20,7 +25,7 @@ const projectsContent = [
   },
   {
     id: "furnitures",
-    src: "/floppies/furnitures.png",
+    src: furnituresImg,
     label: "Furnitures",
     about: {
       title: "More Hoobies",
@@ -35,7 +40,7 @@ const projectsContent = [
   },
   {
     id: "newsletter",
-    src: "/floppies/newsletter.png",
+    src: newsletterImg,
     label: "Newsletter",
     about: {
       title: "A newsletter",
@@ -54,7 +59,7 @@ const projectsContent = [
   },
   {
     id: "portfolio",
-    src: "/floppies/porfolio.png",
+    src: portfolioImg,
     label: "Portfolio",
     about: {
       title: "You're already on it",

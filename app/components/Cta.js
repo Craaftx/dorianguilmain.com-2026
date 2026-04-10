@@ -60,7 +60,7 @@ const Cta = () => {
           <p className="lg:text-sm text-xs">hello@dorianguilmain.com</p>
           <span className="lg:text-sm text-xs">
             +3362
-            <Block text="F00-BaR" />
+            <Block text="0Got-cha" />
           </span>
         </div>
         <div className="flex flex-1 flex-col">
@@ -83,7 +83,7 @@ const Cta = () => {
           </a>
         </div>
         <div className="flex flex-2 flex-col">
-          <p className=" lg:text-md text-sm font-bold">Freelancing TLDR:</p>
+          <p className=" lg:text-md text-sm font-bold">Freelancing TL;DR</p>
           <span className="lg:text-sm text-xs">
             Typescript/Javascript/React{" "}
             <Alien className={`h-5 w-auto ${scribbleAsTextClasses}`} /> with +7

@@ -1,4 +1,12 @@
 import Image from "next/image";
+import bigSunset01Img from "../../public/collages/big-sunset-01.png";
+import mountainsImg from "../../public/collages/mountains.png";
+import about01Img from "../../public/collages/about-01.png";
+import about02Img from "../../public/collages/about-02.png";
+import about03Img from "../../public/collages/about-03.png";
+import tv01Img from "../../public/collages/tv-01.png";
+import tv02Img from "../../public/collages/tv-02.png";
+import tv03Img from "../../public/collages/tv-03.png";
 
 const WorkItem = ({ title, description, period }) => (
   <div className="flex sm:gap-8 gap-2 sm:items-center sm:justify-between border-b border-text/20 sm:pb-2 pb-1">
@@ -81,41 +89,41 @@ const About = () => {
     <div className="relative flex flex-col justify-between h-screen bg-foreground z-30 overflow-hidden">
       <div className="relative flex-1 lg:min-h-[65vh] h-auto w-full overflow-hidden">
         <Image
-          src="/collages/big-sunset-01.png"
+          src={bigSunset01Img}
           alt="Big Sunset"
-          width={1440}
-          height={512}
+          placeholder="blur"
+          sizes="100vw"
           className="absolute h-[85%] min-w-full -top-2 left-[50%] -translate-x-1/2 object-cover"
         />
         <Image
-          src="/collages/mountains.png"
+          src={mountainsImg}
           alt="Mountains"
-          width={875}
-          height={615}
+          placeholder="blur"
+          sizes="(max-width: 768px) 50vw, 40vw"
           className="absolute h-[85%] w-auto -bottom-48 -right-24 object-contain"
         />
         <Image
-          src="/collages/mountains.png"
+          src={mountainsImg}
           alt="Mountains"
-          width={875}
-          height={615}
+          placeholder="blur"
+          sizes="(max-width: 768px) 50vw, 40vw"
           className="absolute h-[85%] w-auto -bottom-32 -left-2 object-contain"
         />
         <div className="absolute w-[55vw] max-md:w-[80vw] bottom-0 left-[50%] -translate-x-1/2 ">
           <div className="absolute bottom-0 left-0 h-[453px] w-[360px] lg:scale-75 md:scale-50 scale-30 lg:translate-y-25 md:translate-y-40 translate-y-45 lg:-translate-x-30 md:-translate-x-50 -translate-x-50 z-10">
             <Image
-              src="/collages/about-01.png"
+              src={about01Img}
               alt="About 01"
-              width={300}
-              height={400}
+              placeholder="blur"
+              sizes="240px"
               className="tv-screen absolute top-[57px] left-[92px] h-[145px] w-[190px] rotate-4  -z-10"
             />
             <div className="absolute top-[57px] left-[92px] h-[145px] w-[190px] rotate-4  -z-20 bg-black" />
             <Image
-              src="/collages/tv-01.png"
+              src={tv01Img}
               alt="TV Guy"
-              width={360}
-              height={453}
+              placeholder="blur"
+              sizes="(max-width: 768px) 150px, 400px"
               className="h-[453px] w-[360px]"
             />
           </div>
@@ -124,35 +132,35 @@ const About = () => {
               Learn more about me
             </span>
             <Image
-              src="/collages/about-02.png"
+              src={about02Img}
               alt="About 02"
-              width={300}
-              height={400}
+              placeholder="blur"
+              sizes="240px"
               className="tv-screen-2 absolute top-[31px] left-[81px] h-[210px] w-[270px] -rotate-3 -z-20"
             />
             <div className="absolute top-[31px] left-[81px] h-[210px] w-[270px] -rotate-3  -z-30 bg-black" />
             <Image
-              src="/collages/tv-02.png"
+              src={tv02Img}
               alt="TV Girl"
-              width={521}
-              height={631}
+              placeholder="blur"
+              sizes="(max-width: 768px) 150px, 400px"
               className="h-[631px] w-[521px]"
             />
           </div>
           <div className="absolute bottom-0 right-0 h-[508px] w-[388px] lg:scale-70 md:scale-50 scale-30 lg:translate-y-30 md:translate-y-40 translate-y-50 lg:translate-x-30 md:translate-x-50 translate-x-50 z-10">
             <Image
-              src="/collages/about-03.png"
+              src={about03Img}
               alt="About 03"
-              width={300}
-              height={400}
+              placeholder="blur"
+              sizes="240px"
               className="tv-screen-3 absolute top-[24px] left-[52px] h-[180px] w-[240px] -rotate-4 -z-20"
             />
             <div className="absolute top-[24px] left-[52px] h-[180px] w-[240px] -rotate-4 -z-30 bg-black" />
             <Image
-              src="/collages/tv-03.png"
+              src={tv03Img}
               alt="TV Old Guy"
-              width={388}
-              height={508}
+              placeholder="blur"
+              sizes="(max-width: 768px) 150px, 400px"
               className="h-[508px] w-[388px]"
             />
           </div>

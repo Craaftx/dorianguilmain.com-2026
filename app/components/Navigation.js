@@ -5,6 +5,8 @@ import { Circled } from "./Scribbles";
 import { useSection } from "./SectionContext";
 import { SECTIONS } from "./sections";
 import Image from "next/image";
+import bigSunset01Img from "../../public/collages/big-sunset-01.png";
+import mountainsImg from "../../public/collages/mountains.png";
 
 const Item = ({ number, text, active }) => (
   <Circled
@@ -31,17 +33,19 @@ const Menu = ({ currentId }) => {
         </a>
       ))}
       <Image
-        src="/collages/big-sunset-01.png"
+        src={bigSunset01Img}
         alt="Big Sunset"
-        width={1440 / 3}
-        height={512 / 3}
+        placeholder="blur"
+        sizes="300px"
+        quality={50}
         className="absolute  scale-200 rotate-5 -top-2 left-[50%] -translate-x-1/2 opacity-40 z-0"
       />
       <Image
-        src="/collages/mountains.png"
+        src={mountainsImg}
         alt="Mountains"
-        width={875 / 3}
-        height={615 / 3}
+        placeholder="blur"
+        sizes="300px"
+        quality={50}
         className="absolute -bottom-2 left-0 w-full opacity-40 z-0"
       />
     </nav>

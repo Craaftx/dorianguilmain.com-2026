@@ -9,6 +9,9 @@ import {
   SmileDead,
   Underlined,
 } from "./Scribbles";
+import mainImg from "../../public/me/main.jpg";
+import bigBlockImg from "../../public/scribbles/big-block.png";
+import todoImg from "../../public/scribbles/todo.png";
 
 const BigBlock = ({ text, className = "", ...props }) => {
   return (
@@ -18,18 +21,19 @@ const BigBlock = ({ text, className = "", ...props }) => {
     >
       {text}
       <Image
-        src="/scribbles/big-block.png"
+        src={bigBlockImg}
         alt="Big Block"
-        width={1000}
-        height={500}
+        placeholder="blur"
+        sizes="(max-width: 768px) 50vw, 33vw"
         className="absolute top-[50%] -left-4 translate-y-[-50%] h-full w-5/6 object-fit"
+        quality={75}
         {...props}
       />
       <Image
-        src="/scribbles/todo.png"
+        src={todoImg}
         alt="Todo"
-        width={304}
-        height={200}
+        placeholder="blur"
+        sizes="64px"
         className="absolute top-full left-2/3 h-1/6 w-auto object-fit"
         {...props}
       />
@@ -73,10 +77,11 @@ const Home = () => {
         </div>
         <div className="flex-1 max-md:order-1 max-md:max-h-[50vh] overflow-hidden">
           <Image
-            src="/me/main.jpg"
+            src={mainImg}
             alt="Profile"
-            width={540}
-            height={824}
+            placeholder="blur"
+            preload
+            sizes="(max-width: 768px) 100vw, 540px"
             className="w-full h-full object-cover"
           />
         </div>

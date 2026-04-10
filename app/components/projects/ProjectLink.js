@@ -1,4 +1,5 @@
 import Image from "next/image";
+import boxImg from "../../../public/scribbles/box.png";
 
 const ProjectLink = ({ action, className = "", ...props }) => {
   return (
@@ -11,10 +12,10 @@ const ProjectLink = ({ action, className = "", ...props }) => {
     >
       {action.label}
       <Image
-        src="/scribbles/box.png"
+        src={boxImg}
         alt="Box"
-        width={229}
-        height={68}
+        placeholder="blur"
+        sizes="128px"
         className="absolute h-full w-full  scale-y-180 scale-x-130 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pointer-events-none"
       />
     </a>

@@ -1,14 +1,24 @@
 import Image from "next/image";
+import alienImg from "../../public/scribbles/symbols/alien.png";
+import crownImg from "../../public/scribbles/symbols/crown.png";
+import diceImg from "../../public/scribbles/symbols/dice.png";
+import smileDeadImg from "../../public/scribbles/symbols/smile-dead.png";
+import pyramidImg from "../../public/scribbles/symbols/pyramid.png";
+import diamondImg from "../../public/scribbles/symbols/diamond.png";
+import infiniteImg from "../../public/scribbles/symbols/infinite.png";
+import blockImg from "../../public/scribbles/block.png";
+import circledImg from "../../public/scribbles/circled.png";
+import lineStraightImg from "../../public/scribbles/line-straight.png";
 
 export const scribbleAsTextClasses = "inline-block align-middle";
 
 export const Alien = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/alien.png"
+      src={alienImg}
       alt="Alien"
-      width={100}
-      height={100}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -18,10 +28,10 @@ export const Alien = ({ className, ...props }) => {
 export const Crown = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/crown.png"
+      src={crownImg}
       alt="Crown"
-      width={100}
-      height={100}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -31,10 +41,10 @@ export const Crown = ({ className, ...props }) => {
 export const Dice = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/dice.png"
+      src={diceImg}
       alt="Dice"
-      width={100}
-      height={100}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -44,10 +54,10 @@ export const Dice = ({ className, ...props }) => {
 export const SmileDead = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/smile-dead.png"
+      src={smileDeadImg}
       alt="Smile Dead"
-      width={100}
-      height={100}
+      placeholder="blur"
+      sizes="64px"
       className={className}
       {...props}
     />
@@ -57,10 +67,10 @@ export const SmileDead = ({ className, ...props }) => {
 export const Pyramid = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/pyramid.png"
+      src={pyramidImg}
       alt="Pyramid"
-      width={100}
-      height={80}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -70,10 +80,10 @@ export const Pyramid = ({ className, ...props }) => {
 export const Diamond = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/diamond.png"
+      src={diamondImg}
       alt="Diamond"
-      width={100}
-      height={74}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -83,10 +93,10 @@ export const Diamond = ({ className, ...props }) => {
 export const Infinite = ({ className, ...props }) => {
   return (
     <Image
-      src="/scribbles/symbols/infinite.png"
+      src={infiniteImg}
       alt="Infinite"
-      width={100}
-      height={45}
+      placeholder="blur"
+      sizes="32px"
       className={className}
       {...props}
     />
@@ -98,10 +108,10 @@ export const Block = ({ text, className, ...props }) => {
     <div className="relative inline-block" {...props}>
       <span className="opacity-80">{text}</span>
       <Image
-        src="/scribbles/block.png"
+        src={blockImg}
         alt="Block"
-        width={300}
-        height={300}
+        placeholder="blur"
+        sizes="128px"
         className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-full object-fit"
         {...props}
       />
@@ -114,10 +124,10 @@ export const Circled = ({ text, className, active = false, ...props }) => {
     <div className="relative inline-block" {...props}>
       {text}
       <Image
-        src="/scribbles/circled.png"
+        src={circledImg}
         alt="Circled"
-        width={200}
-        height={47}
+        placeholder="blur"
+        sizes="128px"
         className={`absolute h-full w-full  scale-y-180 scale-x-130 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pointer-events-none ${active ? "opacity-100" : "opacity-0"}`}
         {...props}
       />
@@ -130,10 +140,10 @@ export const Underlined = ({ text, className, ...props }) => {
     <div className="relative inline-block" {...props}>
       <span>{text}</span>
       <Image
-        src="/scribbles/line-straight.png"
+        src={lineStraightImg}
         alt="Underline"
-        width={300}
-        height={300}
+        placeholder="blur"
+        sizes="128px"
         className="absolute top-full left-1/2 -translate-x-1/2 w-4/5 h-auto object-fit"
         {...props}
       />

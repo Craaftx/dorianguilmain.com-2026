@@ -20,7 +20,7 @@ export const ASSET_CATALOG = [
   { src: "/collages/tv-01.png", label: "TV 1", defaultWidth: 360, defaultHeight: 453 },
   { src: "/collages/tv-02.png", label: "TV 2", defaultWidth: 521, defaultHeight: 639 },
   { src: "/collages/tv-03.png", label: "TV 3", defaultWidth: 388, defaultHeight: 508 },
-  { src: "/collages/10percent.png", label: "10 Percent", defaultWidth: 174, defaultHeight: 469 },
+  { src: "/collages/her.png", label: "Her", defaultWidth: 174, defaultHeight: 469 },
   // Floppies
   { src: "/floppies/css.png", label: "CSS Floppy", defaultWidth: 1371, defaultHeight: 1417 },
   { src: "/floppies/furnitures.png", label: "Furnitures Floppy", defaultWidth: 1371, defaultHeight: 1417 },
@@ -32,10 +32,10 @@ export const ASSET_CATALOG = [
   { src: "/scribbles/big-block.png", label: "Big Block", defaultWidth: 200, defaultHeight: 100 },
   { src: "/scribbles/block.png", label: "Block", defaultWidth: 150, defaultHeight: 60 },
   { src: "/scribbles/circled.png", label: "Circled", defaultWidth: 100, defaultHeight: 100 },
-  { src: "/scribbles/diamond.png", label: "Diamond", defaultWidth: 100, defaultHeight: 100 },
-  { src: "/scribbles/infinite.png", label: "Infinite", defaultWidth: 120, defaultHeight: 60 },
+  { src: "/scribbles/symbols/diamond.png", label: "Diamond", defaultWidth: 100, defaultHeight: 100 },
+  { src: "/scribbles/symbols/infinite.png", label: "Infinite", defaultWidth: 120, defaultHeight: 60 },
   { src: "/scribbles/line-straight.png", label: "Straight Line", defaultWidth: 150, defaultHeight: 20 },
-  { src: "/scribbles/pyramid.png", label: "Pyramid", defaultWidth: 100, defaultHeight: 100 },
+  { src: "/scribbles/symbols/pyramid.png", label: "Pyramid", defaultWidth: 100, defaultHeight: 100 },
   { src: "/scribbles/todo.png", label: "Todo", defaultWidth: 100, defaultHeight: 60 },
   { src: "/scribbles/symbols/alien.png", label: "Alien", defaultWidth: 80, defaultHeight: 80 },
   { src: "/scribbles/symbols/crown.png", label: "Crown", defaultWidth: 80, defaultHeight: 80 },
@@ -45,6 +45,7 @@ export const ASSET_CATALOG = [
   // Me
   { src: "/me/main.jpg", label: "Main Photo", defaultWidth: 300, defaultHeight: 300 },
   { src: "/me/cta.png", label: "CTA Photo", defaultWidth: 872, defaultHeight: 512 },
+{ src: "/me/sunset.png", label: "Sunset Photo", defaultWidth: 380, defaultHeight: 393 },
 ];
 
 /* prettier-ignore */

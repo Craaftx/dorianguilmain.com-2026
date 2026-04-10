@@ -5,6 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import projectsContent from "./projectsContent";
 import ProjectLink from "./ProjectLink";
+import pinkCloudImg from "../../../public/collages/pink-cloud.png";
+import clouds01Img from "../../../public/collages/clouds-01.png";
+import clouds02Img from "../../../public/collages/clouds-02.png";
 
 const CLOUD_PARAMETERS = [
   { x: 18, delay: 0 },
@@ -138,50 +141,56 @@ const Projects = () => {
       <div className="absolute h-full w-full -z-10 pointer-events-none">
         <Image
           ref={(el) => (cloudRefs.current[0] = el)}
-          src="/collages/pink-cloud.png"
+          src={pinkCloudImg}
           alt="Pink Cloud"
-          width={316}
-          height={171}
+          placeholder="blur"
+          sizes="316px"
+          quality={50}
           className="collage absolute -left-32 -top-8 -rotate-45"
         />
         <Image
           ref={(el) => (cloudRefs.current[1] = el)}
-          src="/collages/clouds-01.png"
+          src={clouds01Img}
           alt="Cloud"
-          width={468}
-          height={298}
+          placeholder="blur"
+          sizes="468px"
+          quality={50}
           className="collage absolute -right-48 max-md:-right-[70%] -top-24 max-md:-top-32 -rotate-180"
         />
         <Image
           ref={(el) => (cloudRefs.current[2] = el)}
-          src="/collages/pink-cloud.png"
+          src={pinkCloudImg}
           alt="Pink Cloud"
-          width={316}
-          height={171}
+          placeholder="blur"
+          sizes="316px"
+          quality={50}
           className="collage absolute right-2 -top-12 max-md:-top-24 rotate-12"
         />
         <Image
           ref={(el) => (cloudRefs.current[3] = el)}
-          src="/collages/clouds-02.png"
+          src={clouds02Img}
           alt="Cloud"
-          width={400}
-          height={255}
+          placeholder="blur"
+          sizes="400px"
+          quality={50}
           className="collage absolute -right-48 max-md:-right-[80%] -bottom-24"
         />
         <Image
           ref={(el) => (cloudRefs.current[5] = el)}
-          src="/collages/pink-cloud.png"
+          src={pinkCloudImg}
           alt="Pink Cloud"
-          width={316}
-          height={171}
+          placeholder="blur"
+          sizes="316px"
+          quality={50}
           className="collage absolute -left-28 max-md:-left-[50%] -bottom-20 -rotate-12"
         />
         <Image
           ref={(el) => (cloudRefs.current[4] = el)}
-          src="/collages/pink-cloud.png"
+          src={pinkCloudImg}
           alt="Pink Cloud"
-          width={316}
-          height={171}
+          placeholder="blur"
+          sizes="316px"
+          quality={50}
           className="collage absolute right-[5%] max-md:-right-[10%] -bottom-24 rotate-180"
         />
       </div>
@@ -221,6 +230,8 @@ const Projects = () => {
                 alt={`Floppy ${p.label}`}
                 width={1371}
                 height={1417}
+                placeholder="blur"
+                sizes="25vw"
                 style={{ width: "100%", height: "auto" }}
               />
             </div>

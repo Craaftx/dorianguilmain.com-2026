@@ -3,6 +3,13 @@
 import { useRef, useLayoutEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import moonsImg from "../../public/collages/moons.png";
+import sunsetImg from "../../public/collages/sunset.png";
+import pinkCloudsImg from "../../public/collages/pink-clouds.png";
+import tinyMoonImg from "../../public/collages/tiny-moon.png";
+import pinkCloudImg from "../../public/collages/pink-cloud.png";
+import hotairballoon01Img from "../../public/collages/hotairballoon-01.png";
+import hotairballoon02Img from "../../public/collages/hotairballoon-02.png";
 
 const MovingBackground = () => {
   let root = useRef();
@@ -49,66 +56,75 @@ const MovingBackground = () => {
       className="absolute h-full w-full inset-0 z-0 overflow-hidden opacity-60"
     >
       <Image
-        src="/collages/moons.png"
+        src={moonsImg}
         alt="moons"
-        width={1475}
-        height={833}
+        placeholder="blur"
+        sizes="100vw"
+        quality={75}
         className="collage absolute -top-4 -left-4"
       />
       <Image
-        src="/collages/sunset.png"
+        src={sunsetImg}
         alt="Sunset"
-        height={360}
-        width={167}
+        placeholder="blur"
+        sizes="167px"
+        quality={75}
         className="collage absolute -bottom-8 -right-8"
       />
       <Image
-        src="/collages/pink-clouds.png"
+        src={pinkCloudsImg}
         alt="Pink Clouds"
-        height={325}
-        width={800}
+        placeholder="blur"
+        sizes="(max-width: 768px) 100vw, 800px"
+        quality={75}
         className="collage absolute -bottom-8 -left-16"
       />
       <Image
-        src="/collages/tiny-moon.png"
+        src={tinyMoonImg}
         alt="Tiny Moon"
-        height={197}
-        width={197}
+        placeholder="blur"
+        sizes="197px"
+        quality={75}
         className="collage absolute -bottom-2 left-[50%] translate-x-[-50%]"
       />
       <Image
-        src="/collages/pink-cloud.png"
+        src={pinkCloudImg}
         alt="Pink Cloud"
-        width={316}
-        height={171}
+        placeholder="blur"
+        sizes="316px"
+        quality={75}
         className="collage absolute -right-[15%] top-[45%] -rotate-2"
       />
       <Image
-        src="/collages/pink-cloud.png"
+        src={pinkCloudImg}
         alt="Pink Cloud"
-        width={316}
-        height={171}
+        placeholder="blur"
+        sizes="316px"
+        quality={75}
         className="collage absolute -right-[10%] top-[30%] rotate-45"
       />
       <Image
-        src="/collages/hotairballoon-01.png"
+        src={hotairballoon01Img}
         alt="Hot Air Balloon 01"
-        width={155}
-        height={195}
+        placeholder="blur"
+        sizes="155px"
+        quality={75}
         className="collage absolute -right-[2%] -top-[5%] -rotate-15"
       />
       <Image
-        src="/collages/hotairballoon-01.png"
+        src={hotairballoon01Img}
         alt="Hot Air Balloon 01"
-        width={155}
-        height={195}
+        placeholder="blur"
+        sizes="155px"
+        quality={75}
         className="collage absolute -left-[5%] bottom-[10%] rotate-5"
       />
       <Image
-        src="/collages/hotairballoon-02.png"
+        src={hotairballoon02Img}
         alt="Hot Air Balloon 02"
-        width={205}
-        height={243}
+        placeholder="blur"
+        sizes="96px"
+        quality={75}
         className="collage absolute w-24 h-auto object-contain left-[10%] bottom-[0%] rotate-5"
       />
     </div>
